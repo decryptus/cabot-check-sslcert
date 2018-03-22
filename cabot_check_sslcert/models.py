@@ -47,7 +47,7 @@ class SslcertStatusCheck(StatusCheck):
 
             if remaining < datetime.timedelta(days=0):
                 raise Exception("Certificate expired %s days ago" % remaining.days)
-            elif remaining < datetime.timedelta(days=buffer_days):
+            elif remaining < datetime.timedelta(days=self.days):
                 raise Exception("Certificate expires in %s days" % remaining.days)
         except Exception as e:
             result.error = u"{} {} {}".format(e.message, self.host, self.port)
