@@ -22,6 +22,10 @@ class SslcertStatusCheck(StatusCheck):
         help_text='Days before expiration.',
     )
 
+    @property
+    def check_category(self):
+        return "SSL Certificate Check"
+
     def ssl_expiry_datetime(self):
         context = ssl.create_default_context()
         conn = context.wrap_socket(
