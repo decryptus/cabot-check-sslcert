@@ -13,13 +13,21 @@ class SslcertStatusCheck(StatusCheck):
     duplicate_url_name = 'duplicate-sslcert-check'
     icon_class = 'glyphicon-transfer'
     host = models.TextField(
-        help_text='Host to check.',
+        help_text=b'Host to check.',
+        null=False,
+        blank=False,
     )
     port = models.PositiveIntegerField(
-        help_text='Port to check.',
+        help_text=b'Port to check.',
+        null=False,
+        blank=False,
+        default=443,
     )
     days = models.PositiveIntegerField(
-        help_text='Days before expiration.',
+        help_text=b'Days before expiration.',
+        null=False,
+        blank=False,
+        default=60,
     )
 
     @property
