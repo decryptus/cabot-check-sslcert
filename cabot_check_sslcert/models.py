@@ -11,7 +11,7 @@ class SslcertStatusCheck(StatusCheck):
     check_name = 'sslcert'
     edit_url_name = 'update-sslcert-check'
     duplicate_url_name = 'duplicate-sslcert-check'
-    icon_class = 'glyphicon-transfer'
+    icon_class = 'glyphicon-certificate'
     host = models.TextField(
         help_text=b'Host to check.',
         null=False,
