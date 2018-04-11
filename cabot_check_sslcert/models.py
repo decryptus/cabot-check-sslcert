@@ -23,6 +23,12 @@ class SslcertStatusCheck(StatusCheck):
         blank=False,
         default=443,
     )
+    common_name = models.TextField(
+        help_text=b'Common name to check.',
+        null=True,
+        blank=True,
+        default=None,
+    )
     days = models.PositiveIntegerField(
         help_text=b'Days before expiration.',
         null=False,
@@ -38,7 +44,7 @@ class SslcertStatusCheck(StatusCheck):
         context = ssl.create_default_context()
         conn = context.wrap_socket(
             socket.socket(socket.AF_INET),
-            server_hostname = self.host,
+            server_hostname = self.common_name or self.host,
         )
         conn.settimeout(self.timeout)
 

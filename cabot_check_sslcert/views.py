@@ -17,6 +17,7 @@ class SslcertStatusCheckForm(StatusCheckForm):
         fields = (
             'name',
             'host',
+            'common_name',
             'port',
             'days',
             'timeout',
@@ -29,6 +30,10 @@ class SslcertStatusCheckForm(StatusCheckForm):
         widgets = dict(**base_widgets)
         widgets.update({
             'host': forms.TextInput(attrs={
+                'style': 'width: 100%',
+                'placeholder': 'service.arachnys.com',
+            }),
+            'common_name': forms.TextInput(attrs={
                 'style': 'width: 100%',
                 'placeholder': 'service.arachnys.com',
             })
