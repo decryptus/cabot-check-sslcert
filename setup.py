@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(name='cabot_check_sslcert',
-      version='0.1.10',
+      version='0.1.11',
       description='A SSL certificat check plugin for Cabot',
       author='Adrien DELLE CAVE',
       author_email='pypi@doowan.net',

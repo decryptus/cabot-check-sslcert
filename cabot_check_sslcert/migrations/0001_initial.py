@@ -36,12 +36,6 @@ class Migration(migrations.Migration):
                     null=False,
                     blank=False,
                     default=443)),
-                ('common_name',
-                 models.TextField(
-                    help_text=b'Common name to check.',
-                    null=True,
-                    blank=True,
-                    default=None)),
                 ('days',
                  models.PositiveIntegerField(
                     help_text=b'Days before expiration.',
